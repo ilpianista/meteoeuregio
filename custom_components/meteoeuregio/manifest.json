@@ -1,0 +1,11 @@
+{
+  "domain": "meteoeuregio",
+  "name": "Meteo Euregio",
+  "codeowners": [
+    "@ilpianista"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/home-assistant/core/",
+  "iot_class": "cloud_polling",
+  "version": "1.0.0"
+}
