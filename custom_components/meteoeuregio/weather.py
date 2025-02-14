@@ -38,7 +38,15 @@ from homeassistant.helpers.sun import is_up
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.util import dt as dt_util
 
-from .const import ATTR_ALTITUDE, DOMAIN, SKY_CONDITION_CLASSES
+from .const import (
+    ATTR_ALTITUDE,
+    ATTR_FORECAST_FREEZING_LEVEL,
+    ATTR_FORECAST_FRESH_SNOW,
+    ATTR_FORECAST_SNOW_LEVEL,
+    ATTR_FORECAST_SUNSHINE_DURATION,
+    DOMAIN,
+    SKY_CONDITION_CLASSES,
+)
 from .coordinator import MeteoEuregioDataUpdateCoordinator
 
 
@@ -178,6 +186,10 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
                     ATTR_FORECAST_CONDITION: SKY_CONDITION_CLASSES.get(
                         data.get("sky_condition", "")
                     ),
+                    ATTR_FORECAST_FRESH_SNOW: data.get("fresh_snow"),
+                    ATTR_FORECAST_SNOW_LEVEL: data.get("snow_level"),
+                    ATTR_FORECAST_FREEZING_LEVEL: data.get("freezing_level"),
+                    ATTR_FORECAST_SUNSHINE_DURATION: data.get("sunshine_duration"),
                 }
             )
 
@@ -218,6 +230,10 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
                             self.hass,
                             time,
                         ),
+                        ATTR_FORECAST_FRESH_SNOW: data.get("fresh_snow"),
+                        ATTR_FORECAST_SNOW_LEVEL: data.get("snow_level"),
+                        ATTR_FORECAST_FREEZING_LEVEL: data.get("freezing_level"),
+                        ATTR_FORECAST_SUNSHINE_DURATION: data.get("sunshine_duration"),
                     }
                 )
 

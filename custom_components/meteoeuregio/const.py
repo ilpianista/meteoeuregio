@@ -57,3 +57,9 @@ SKY_CONDITION_CLASSES = {
     "Y": ATTR_CONDITION_LIGHTNING_RAINY,  # Unstable with snow thunderstorm
     "Z": ATTR_CONDITION_LIGHTNING_RAINY,  # Snow thunderstorm
 }
+
+# Additional forecast attributes
+ATTR_FORECAST_FRESH_SNOW = "fresh_snow"
+ATTR_FORECAST_SNOW_LEVEL = "snow_level"
+ATTR_FORECAST_FREEZING_LEVEL = "freezing_level"
+ATTR_FORECAST_SUNSHINE_DURATION = "sunshine_duration"
