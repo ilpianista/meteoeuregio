@@ -66,6 +66,7 @@ async def async_setup_entry(
 class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
     """Defines an MeteoEuregio weather entity."""
 
+    _attr_attribution = "Weather forecast from https://meteo.report"
     _attr_native_precipitation_unit = UnitOfPrecipitationDepth.MILLIMETERS
     _attr_native_pressure_unit = UnitOfPressure.HPA
     _attr_native_temperature_unit = UnitOfTemperature.CELSIUS
@@ -87,6 +88,8 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
             identifiers={(DOMAIN, coordinator.venue.id)},
             manufacturer="Meteo Euregio",
             name=name,
+            model="Forecast",
+            configuration_url="https://meteo.report",
         )
 
     @property
