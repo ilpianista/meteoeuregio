@@ -16,6 +16,6 @@ Donations via [Liberapay](https://liberapay.com/ilpianista) or Bitcoin (1Ph3hFEo
 
 [hacs]: https://hacs.xyz
 [hacsbadge]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
-[license-shield]: https://img.shields.io/github/license/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}.svg?style=for-the-badge
-[releases]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases
+[license-shield]: https://img.shields.io/github/license/ilpianista/meteoeuregio.svg?style=for-the-badge
+[releases-shield]: https://img.shields.io/github/release/ilpianista/meteoeuregio.svg?style=for-the-badge
+[releases]: https://github.com/ilpianista/meteoeuregio/releases
