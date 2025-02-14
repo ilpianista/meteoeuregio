@@ -14,13 +14,13 @@ Each 1-wire component data sheet describes the different properties the componen
 
 ## Supported sensors
 
-| Family | Device           | Physical Quantity  |
-| -------|:-----|:-----|
-| 10     | [DS18S20](https://www.maximintegrated.com/en/products/sensors/DS18S20.html)  | Temperature                     |
-| 22     | [DS1822](https://datasheets.maximintegrated.com/en/ds/DS1822.pdf)            | Temperature                     |
-| 28     | [DS18B20](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)          | Temperature                     |
-| 3B     | [DS1825](https://datasheets.maximintegrated.com/en/ds/DS1825.pdf)            | Temperature                     |
-| 42     | [DS28EA00](https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf)        | Temperature                     |
+| Family | Device                                                                      | Physical Quantity |
+| ------ | :-------------------------------------------------------------------------- | :---------------- |
+| 10     | [DS18S20](https://www.maximintegrated.com/en/products/sensors/DS18S20.html) | Temperature       |
+| 22     | [DS1822](https://datasheets.maximintegrated.com/en/ds/DS1822.pdf)           | Temperature       |
+| 28     | [DS18B20](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)         | Temperature       |
+| 3B     | [DS1825](https://datasheets.maximintegrated.com/en/ds/DS1825.pdf)           | Temperature       |
+| 42     | [DS28EA00](https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf)       | Temperature       |
 
 ## Interfacing with the 1-wire bus
 
