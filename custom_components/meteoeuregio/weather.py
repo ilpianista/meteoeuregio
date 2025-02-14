@@ -132,6 +132,13 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
         return self.coordinator.data["observation"].get("relative_humidity")
 
     @property
+    def native_wind_gust_speed(self) -> float | None:
+        """Return the wind gust speed."""
+        if not self.coordinator.data:
+            return None
+        return self.coordinator.data["observation"].get("wind_gust")
+
+    @property
     def native_wind_speed(self) -> float | None:
         """Return the wind speed."""
         if not self.coordinator.data:
