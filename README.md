@@ -16,6 +16,13 @@ This integration only supports locations within Euregio (Tyrol, South Tyrol and 
 1. Copy the `custom_components/meteoeuregio` folder to your Home Assistant custom_components directory.
 1. Restart Home Assistant to recognize the new integration.
 
+## Setup
+
+1. Go to Configuration → Devices & Services in Home Assistant.
+2. Click Add Integration.
+3. Search for Meteo Euregio.
+4. Follow the prompts to select your desired coordinates.
+
 ## Donate
 
 Donations via [Liberapay](https://liberapay.com/ilpianista) or Bitcoin (1Ph3hFEoQaD4PK6MhL3kBNNh9FZFBfisEH) are always welcomed, _thank you_!
