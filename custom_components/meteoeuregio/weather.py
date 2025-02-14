@@ -47,7 +47,7 @@ def _night_if_sunny(
     hass: HomeAssistant = None,
     time: datetime.datetime | None = None,
 ) -> str:
-    if sky_condition == ATTR_CONDITION_SUNNY and is_up(hass, dt_util.as_utc(time)):
+    if sky_condition == ATTR_CONDITION_SUNNY and not is_up(hass, dt_util.as_utc(time)):
         return ATTR_CONDITION_CLEAR_NIGHT
 
     return sky_condition
@@ -165,8 +165,6 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
                     ATTR_FORECAST_NATIVE_WIND_GUST_SPEED: data.get("wind_gust"),
                     ATTR_FORECAST_NATIVE_WIND_SPEED: data.get("wind_speed"),
                     ATTR_FORECAST_WIND_BEARING: data.get("wind_direction"),
-                    # sky_condition is always night for the next days,
-                    # thus we take the first one in the hourly set
                     ATTR_FORECAST_CONDITION: SKY_CONDITION_CLASSES.get(
                         data.get("sky_condition", "")
                     ),
