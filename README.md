@@ -8,6 +8,14 @@
 
 This integration only supports locations within Euregio (Tyrol, South Tyrol and Trentino).
 
+## Installation
+
+### Manual Installation
+
+1. Download or clone this repository.
+1. Copy the `custom_components/meteoeuregio` folder to your Home Assistant custom_components directory.
+1. Restart Home Assistant to recognize the new integration.
+
 ## Donate
 
 Donations via [Liberapay](https://liberapay.com/ilpianista) or Bitcoin (1Ph3hFEoQaD4PK6MhL3kBNNh9FZFBfisEH) are always welcomed, _thank you_!
