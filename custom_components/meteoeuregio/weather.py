@@ -44,6 +44,7 @@ from .const import (
     ATTR_FORECAST_FRESH_SNOW,
     ATTR_FORECAST_SNOW_LEVEL,
     ATTR_FORECAST_SUNSHINE_DURATION,
+    ATTR_STATION_NAME,
     DOMAIN,
     SKY_CONDITION_CLASSES,
 )
@@ -253,6 +254,7 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
             return {}
 
         return {
+            ATTR_STATION_NAME: self.coordinator.venue.name,
             ATTR_ALTITUDE: self.coordinator.venue.elevation,
             ATTR_LATITUDE: self.coordinator.venue.latitude,
             ATTR_LONGITUDE: self.coordinator.venue.longitude,

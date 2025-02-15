@@ -63,3 +63,6 @@ ATTR_FORECAST_FRESH_SNOW = "fresh_snow"
 ATTR_FORECAST_SNOW_LEVEL = "snow_level"
 ATTR_FORECAST_FREEZING_LEVEL = "freezing_level"
 ATTR_FORECAST_SUNSHINE_DURATION = "sunshine_duration"
+
+# Additional states
+ATTR_STATION_NAME = "station_name"
