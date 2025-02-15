@@ -6,5 +6,5 @@
   "documentation": "https://github.com/ilpianista/meteoeuregio",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/ilpianista/meteoeuregio",
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
