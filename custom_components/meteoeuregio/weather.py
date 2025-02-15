@@ -52,10 +52,12 @@ from .coordinator import MeteoEuregioDataUpdateCoordinator
 
 def _night_if_sunny(
     sky_condition: str,
-    hass: HomeAssistant = None,
+    hass: HomeAssistant,
     time: datetime.datetime | None = None,
 ) -> str:
-    if sky_condition == ATTR_CONDITION_SUNNY and not is_up(hass, dt_util.as_utc(time)):
+    utc_time = dt_util.as_utc(time) if time is not None else None
+
+    if sky_condition == ATTR_CONDITION_SUNNY and not is_up(hass, utc_time):
         return ATTR_CONDITION_CLEAR_NIGHT
 
     return sky_condition
@@ -108,7 +110,8 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
 
         current_forecast = next(iter(self.coordinator.data["forecast"]["180"].values()))
         return _night_if_sunny(
-            SKY_CONDITION_CLASSES.get(current_forecast.get("sky_condition", ""))
+            SKY_CONDITION_CLASSES.get(current_forecast.get("sky_condition", "")),
+            self.hass,
         )
 
     @property
