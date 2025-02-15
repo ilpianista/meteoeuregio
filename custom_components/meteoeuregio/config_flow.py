@@ -26,7 +26,7 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 step_id="user",
                 data_schema=vol.Schema(
                     {
-                        vol.Required(CONF_NAME, default="Meteo Euregio"): str,
+                        vol.Required(CONF_NAME, default="Home"): str,
                         vol.Required(
                             CONF_LATITUDE, default=self.hass.config.latitude
                         ): vol.Coerce(float),
