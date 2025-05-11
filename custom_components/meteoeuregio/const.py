@@ -8,7 +8,6 @@ from typing import Final
 
 from homeassistant.components.weather import (
     ATTR_CONDITION_CLOUDY,
-    ATTR_CONDITION_EXCEPTIONAL,
     ATTR_CONDITION_FOG,
     ATTR_CONDITION_LIGHTNING,
     ATTR_CONDITION_LIGHTNING_RAINY,
@@ -27,6 +26,8 @@ LOGGER = logging.getLogger(__name__)
 SCAN_INTERVAL = timedelta(minutes=30)
 
 ATTR_ALTITUDE = "altitude"
+
+ATTRIBUTION = "Weather forecast from https://meteo.report"
 
 # https://manager.meteo.report/api/sky_conditions/
 SKY_CONDITION_CLASSES = {
@@ -50,7 +51,7 @@ SKY_CONDITION_CLASSES = {
     "R": ATTR_CONDITION_SNOWY_RAINY,  # Wet snow
     "S": ATTR_CONDITION_FOG,  # Haze
     "T": ATTR_CONDITION_FOG,  # Mountain haze
-    "U": ATTR_CONDITION_EXCEPTIONAL,  # Unstable
+    "U": ATTR_CONDITION_LIGHTNING,  # Unstable
     "V": ATTR_CONDITION_LIGHTNING,  # Thunderstorm
     "W": ATTR_CONDITION_SNOWY_RAINY,  # Unstable with wet snow
     "X": ATTR_CONDITION_LIGHTNING_RAINY,  # Wet snow thunderstorm

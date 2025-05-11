@@ -1,4 +1,4 @@
-"""Support for Meteo Euregio weather."""
+"""Support for MeteoEuregio weather."""
 
 from __future__ import annotations
 
@@ -39,6 +39,7 @@ from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.util import dt as dt_util
 
 from .const import (
+    ATTRIBUTION,
     ATTR_ALTITUDE,
     ATTR_FORECAST_FREEZING_LEVEL,
     ATTR_FORECAST_FRESH_SNOW,
@@ -77,7 +78,7 @@ async def async_setup_entry(
 class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
     """Defines an MeteoEuregio weather entity."""
 
-    _attr_attribution = "Weather forecast from https://meteo.report"
+    _attr_attribution = ATTRIBUTION
     _attr_native_precipitation_unit = UnitOfPrecipitationDepth.MILLIMETERS
     _attr_native_pressure_unit = UnitOfPressure.HPA
     _attr_native_temperature_unit = UnitOfTemperature.CELSIUS
