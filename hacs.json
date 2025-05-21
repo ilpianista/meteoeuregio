@@ -1,5 +1,6 @@
 {
   "name": "Meteo Euregio",
   "hacs": "2.0.1",
-  "homeassistant": "2024.1.0"
+  "homeassistant": "2024.1.0",
+  "country": ["IT", "AT"]
 }
