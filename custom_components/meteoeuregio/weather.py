@@ -39,13 +39,13 @@ from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.util import dt as dt_util
 
 from .const import (
-    ATTRIBUTION,
     ATTR_ALTITUDE,
     ATTR_FORECAST_FREEZING_LEVEL,
     ATTR_FORECAST_FRESH_SNOW,
     ATTR_FORECAST_SNOW_LEVEL,
     ATTR_FORECAST_SUNSHINE_DURATION,
     ATTR_STATION_NAME,
+    ATTRIBUTION,
     DOMAIN,
     SKY_CONDITION_CLASSES,
 )
@@ -113,7 +113,7 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
         start_date = dt_util.parse_datetime(self.coordinator.data["forecast"]["start"])
         current_time = datetime.now()
 
-        # Add hourly forecasts
+        # Loop till current time
         for idx, data in enumerate(self.coordinator.data["forecast"]["180"].values()):
             for hour in range(3):
                 time = start_date + timedelta(hours=(idx * 3) + hour)
