@@ -110,11 +110,24 @@ class MeteoEuregioWeather(CoordinatorEntity, WeatherEntity):
         if not self.coordinator.data:
             return None
 
-        current_forecast = next(iter(self.coordinator.data["forecast"]["180"].values()))
-        return _night_if_sunny(
-            SKY_CONDITION_CLASSES.get(current_forecast.get("sky_condition", "")),
-            self.hass,
-        )
+        start_date = dt_util.parse_datetime(self.coordinator.data["forecast"]["start"])
+        current_time = datetime.now()
+
+        # Add hourly forecasts
+        for idx, data in enumerate(self.coordinator.data["forecast"]["180"].values()):
+            for hour in range(3):
+                time = start_date + timedelta(hours=(idx * 3) + hour)
+
+                # skip past forecast
+                if time < current_time:
+                    continue
+
+                return _night_if_sunny(
+                    SKY_CONDITION_CLASSES.get(data.get("sky_condition", "")),
+                    self.hass,
+                )
+
+        return None
 
     @property
     def native_temperature(self) -> float | None:
